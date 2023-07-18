@@ -1,4 +1,8 @@
+import {useUiStore} from "@/store/uiStore";
+
 export default function Home() {
+    const pageName = useUiStore(s => s.pageName)
+    console.log(' > render home page', pageName);
   return (
       <div>
         <h1>Home page</h1>
@@ -9,7 +13,7 @@ export default function Home() {
 export const getServerSideProps = () => {
     return {
         props: {
-            pageName: 'Home page',
+            pageName: 'Home_page_name',
         }
     }
 }
